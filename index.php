@@ -1,6 +1,7 @@
 <?php
 session_start();
 include($_SERVER["DOCUMENT_ROOT"]."/SpotPrices/class/spotClass.php");
+//Sas
 $login =new spotClass();
 $logged = $login->inicia();
 if(!$logged){
