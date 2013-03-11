@@ -1,0 +1,69 @@
+<script language="javascript">
+var msg = "<?php echo $msg; ?>";
+            $(document).ready(function (){
+
+                    $("#pikame").PikaChoose();
+
+          createWindow(msg, 3000);
+          $("#menu-images").kendoMenu({
+                    dataSource: [
+                        {
+                            text: "Home", imageUrl: "../images/menu/home.png",
+                            items: [
+                                { text: "Top News", imageUrl: "../images/menu/news.png" },
+                                { text: "Photo Galleries", imageUrl: "../images/menu/gallery.png" },
+                                { text: "Videos Records", imageUrl: "../images/menu/movie.png" },
+                                { text: "Radio Records", imageUrl: "../images/menu/speaker.png" }
+                            ]
+                        },
+                        {
+                            text: "Metal Prices", imageUrl: "../images/currency/money.png",
+                            items: [
+                                { text: "Gold", imageUrl: "../images/currency/gold_bullion.png" },
+                                { text: "Silver", imageUrl: "../images/currency/silver_bullion.png" },
+                                { text: "Copper", imageUrl: "../images/currency/copper_bullion.png" },
+                                { text: "Platinum", imageUrl: "../images/currency/platinum_bullion.png" }
+                            ]
+                        },
+                        {
+                            text: "Currency Prices", imageUrl: "../images/currency/money.png",
+                            items: [
+                                { text: "Dollar", imageUrl: "../images/currency/currency_dollar_red.png" },
+                                { text: "Euro", imageUrl: "../images/currency/currency_euro_red.png" },
+                                { text: "Yuan", imageUrl: "../images/currency/currency_yuan_red.png" }
+                            ]
+                        },
+                        {
+                            text: "Configuration", imageUrl: "../images/menu/settings.png",
+                            items: [
+                                { text: "My account", imageUrl: "../images/menu/my_account.png", url: 'myaccount.php' },
+                                { text: "My apps", imageUrl: "../images/menu/software.png" },
+                                { text: "Log off", imageUrl: "../images/menu/exit.png", url: "logout.php?doLogout=true" }
+                            ]
+                        }
+                    ]
+
+                });
+
+          function createWindow(msg,time) {
+            $('#mymsgbox').html("");
+            $('#mymsgbox').html(msg);
+            $('#mymsgbox').kendoWindow({
+               title: false,
+               modal: false,
+               resizable: false,
+               width: 600,
+               actions:{}
+            }).data('kendoWindow').open();
+            $("#mymsgbox").parent().css("position", "fixed");
+            $("#mymsgbox").closest(".k-window").css({
+                top: 50,
+                left: 100
+            });
+            setTimeout(function() {
+              $('#mymsgbox').data("kendoWindow").close();
+            }, time);
+
+          }
+                });
+        </script>
