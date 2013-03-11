@@ -1,10 +1,10 @@
 <?php
 session_start();
-include("class/spotClass.php");
+include($_SERVER["DOCUMENT_ROOT"]."/SpotPrices/class/spotClass.php");
 $login =new spotClass();
 $logged = $login->inicia();
 if(!$logged){
-    if ($_GET['code']) {
+    if (isset($_GET['code'])) {
       $msg = $login->errorCodes($_GET['code']);
     }else{
      $msg = "<span style='font-size:1.8em;'>Your'e not logged in, please register now or login to your account.</span>"; 
