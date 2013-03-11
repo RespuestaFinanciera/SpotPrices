@@ -2,7 +2,7 @@
 
 
 class spotClass {
-      public $class_url = "http://ns1.maximas.com.mx/sp/class/";
+      public $class_url = "http://localhost/SpotPrices/class/";
         // Inicia sesion
 
         public function inicia($usuario=NULL, $clave=NULL) {

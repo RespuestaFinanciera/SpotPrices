@@ -3,8 +3,8 @@ require_once("PHPMailer_v5.1/class.phpmailer.php");
 
 class sendMail{
 
-	 	public $classUrl = "http://ns1.maximas.com.mx/sp/class/";
- 		public $Url = "http://ns1.maximas.com.mx/sp/";
+	 	public $classUrl = "http://localhost/SpotPrices/class/";
+ 		public $Url = "http://localhost/SpotPrices/";
 		public function enviarCorreo($correo){
 		        $link = base64_encode(base64_encode($correo));
 		        $time = date("d-m-Y H:i:s");

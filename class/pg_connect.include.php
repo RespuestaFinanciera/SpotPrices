@@ -8,8 +8,6 @@ class dbOptions{
 	function __construct(){
 		$this->_SITE_ROOT = $_SERVER['DOCUMENT_ROOT']."/SpotPrices/";
 		include($this->_SITE_ROOT."config.php");
-		//sas
-		//blas
 		$this->dbConnection = pg_connect("dbname=$_DB_NAME user=$_DB_USER password=$_DB_PSWD host=$_DB_HOST");
 	}
 	function result_construct($action,$data){
